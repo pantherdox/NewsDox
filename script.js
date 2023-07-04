@@ -65,3 +65,13 @@ searchButton.addEventListener('click' , () => {
     curSelectedNav?.classList.remove('active');
     curSelectedNav = null;
 })
+
+searchText.addEventListener('keyup' , (e) => {
+    if(e.keyCode === 13){
+    const query= searchText.value;
+    if(!query) return;
+    fetchNews(query);
+    curSelectedNav?.classList.remove('active');
+    curSelectedNav = null;
+}
+})
